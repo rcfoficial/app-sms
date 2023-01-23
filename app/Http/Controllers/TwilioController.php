@@ -18,17 +18,12 @@ class TwilioController extends Controller
 
     public function sendTwilio()
     {
-        // Your Account SID and Auth Token from twilio.com/console
-        $account_sid = 'ACaaf1bd22376bca4b6581b0552ac9a505';
-        $auth_token = 'bc1qzk3kxhdxnzkpdgdn9ueg34y08smxgfv0hxvcu3';
 
-        $twilio_number = "+19894655752";
-
-        $client = new Client($account_sid, $auth_token);
+        $client = new Client(getenv('TWILIO_SID'), getenv('TWILIO_TOKEN'));
         $client->messages->create(
             '+16463386303',
             array(
-                'from' => $twilio_number,
+                'from' => getenv('TWILIO_FROM'),
                 'body' => 'I sent this message in under 10 minutes!'
             )
         );
