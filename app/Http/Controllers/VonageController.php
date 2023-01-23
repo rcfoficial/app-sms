@@ -7,6 +7,7 @@ use http\Client\Response;
 use Illuminate\Http\Request;
 use Twilio\TwiML\MessagingResponse;
 use Twilio\Rest\Client;
+use Vonage\Client\Credentials\Basic;
 
 class VonageController extends Controller
 {
@@ -39,22 +40,18 @@ class VonageController extends Controller
 
     }
 
-    public function receiveSms()
+/*    public function receiveSms()
     {
 
 
-        $basic  = new \Vonage\Client\Credentials\Basic("4c6f24b5", "zi0BG1uuQQanXjDa");
-        $client = new \Vonage\Client(new \Vonage\Client\Credentials\Container($basic));
+        $basic  = new Basic("4c6f24b5", "zi0BG1uuQQanXjDa");
+        $client = new \Vonage\Client($basic);
 
-        /** @var \Vonage\SMS\Webhook\InboundSMS */
-        $inbound = \Vonage\SMS\Webhook\Factory::createFromGlobals();
+        dd($client);
 
-        error_log($inbound->getText());
-/*        $client->sms()->send(
-            new \Vonage\SMS\Message\SMS($inbound->getFrom(), $inbound->getTo(), 'Thanks for sending a message!' )
-        );*/
 
-    }
+
+    }*/
 
 
 }

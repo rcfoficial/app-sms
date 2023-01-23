@@ -22,11 +22,11 @@ class TwilioController extends Controller
         $account_sid = 'ACaaf1bd22376bca4b6581b0552ac9a505';
         $auth_token = 'bc1qzk3kxhdxnzkpdgdn9ueg34y08smxgfv0hxvcu3';
 
-        $twilio_number = "+15017122661";
+        $twilio_number = "+19894655752";
 
         $client = new Client($account_sid, $auth_token);
         $client->messages->create(
-            '+33644628069',
+            '+16463386303',
             array(
                 'from' => $twilio_number,
                 'body' => 'I sent this message in under 10 minutes!'
