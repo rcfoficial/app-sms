@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\SendVonageRequest;
+use http\Client\Response;
 use Illuminate\Http\Request;
 use Twilio\TwiML\MessagingResponse;
 use Twilio\Rest\Client;
@@ -18,7 +19,7 @@ class VonageController extends Controller
         {
             $to_number      = '+16463386303';
             $vonage_number  = '+15043755723';
-
+            $VONAGE_API_KEY = "4c6f24b5";
 
 
 /*            $basic  = new \Vonage\Client\Credentials\Basic("4c6f24b5", "zi0BG1uuQQanXjDa");
@@ -35,6 +36,23 @@ class VonageController extends Controller
             } else {
                 echo "The message failed with status: " . $message->getStatus() . "\n";
             }*/
+
+    }
+
+    public function receiveSms()
+    {
+
+
+        $basic  = new \Vonage\Client\Credentials\Basic("4c6f24b5", "zi0BG1uuQQanXjDa");
+        $client = new \Vonage\Client(new \Vonage\Client\Credentials\Container($basic));
+
+        /** @var \Vonage\SMS\Webhook\InboundSMS */
+        $inbound = \Vonage\SMS\Webhook\Factory::createFromGlobals();
+
+        error_log($inbound->getText());
+/*        $client->sms()->send(
+            new \Vonage\SMS\Message\SMS($inbound->getFrom(), $inbound->getTo(), 'Thanks for sending a message!' )
+        );*/
 
     }
 

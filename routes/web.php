@@ -24,6 +24,7 @@ Route::get('/', function () {
 Route::controller(VonageController::class)->group(function (){
     Route::get('/vonage', 'index')->name('vonage');
     Route::get('/vonage/send', 'sendVonage')->name('vonage.send');
+    Route::get('/vonage/receive', 'receiveSms')->name('vonage.receive');
 });
 
 Route::controller(TwilioController::class)->group(function (){
