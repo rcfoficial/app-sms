@@ -57,8 +57,9 @@
                                 <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
 
                                     <ul>
-                                        <li><a href="{{ route('vonage.send') }}">Send Vonage</a></li>
-                                        <li><a href="{{ route('twilio.send') }}">Send Twilio</a></li>
+{{--                                        <li><a href="{{ route('vonage.send') }}">Send Vonage</a></li>--}}
+{{--                                        <li><a href="{{ route('twilio.send') }}">Send Twilio</a></li>--}}
+                                        <li><a href="{{ route('twilio.receive') }}">Receive Twilio</a></li>
                                     </ul>
 
                                 </div>

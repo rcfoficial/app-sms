@@ -29,4 +29,11 @@ class TwilioController extends Controller
         );
 
     }
+
+    public function receiveTwilio()
+    {
+        $response = new MessagingResponse();
+        $response->message("The Robots are coming! Head for the hills!");
+        print $response;
+    }
 }

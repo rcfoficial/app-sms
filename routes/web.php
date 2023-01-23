@@ -29,4 +29,5 @@ Route::controller(VonageController::class)->group(function (){
 
 Route::controller(TwilioController::class)->group(function (){
     Route::get('/twilio/send', 'sendTwilio')->name('twilio.send');
+    Route::get('/twilio/receive', 'receiveTwilio')->name('twilio.receive');
 });
